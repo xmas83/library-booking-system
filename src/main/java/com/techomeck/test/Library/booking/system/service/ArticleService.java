@@ -11,4 +11,7 @@ public interface ArticleService {
     void addArticle(Article article);
 
     boolean deleteArticle(int id);
+
+    Article getArticle(int id);
+
 }

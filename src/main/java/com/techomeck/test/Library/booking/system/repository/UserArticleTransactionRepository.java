@@ -18,4 +18,7 @@ public interface UserArticleTransactionRepository extends JpaRepository<UserArti
     @Query(value = "Select u from UserArticleTransaction u where u.returnedOn IS NULL and u.user = :user and u.article = :article")
     UserArticleTransaction getItem(@Param("user") User user, @Param("article") Article article);
 
+    @Query("Select u from UserArticleTransaction u where u.returnedOn IS NULL")
+    List<UserArticleTransaction> findArticlesNotReturned();
+
 }
